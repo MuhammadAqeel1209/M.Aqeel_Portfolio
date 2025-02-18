@@ -94,7 +94,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={50}
                 duration={500}>
-                About
+                Skills
               </Link>
             </li>
             <li>
@@ -105,6 +105,16 @@ const Navbar = () => {
                 offset={50}
                 duration={500}>
                 Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='experience'
+                onClick={closeNav}
+                smooth={true}
+                offset={50}
+                duration={500}>
+                Experience
               </Link>
             </li>
             <li>

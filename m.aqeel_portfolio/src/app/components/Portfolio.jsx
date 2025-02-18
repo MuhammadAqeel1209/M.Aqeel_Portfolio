@@ -92,17 +92,6 @@ const Portfolio = () => {
             className={`flex flex-col md:flex-row ${
               index % 2 !== 0 ? 'md:flex-row-reverse' : ''
             } mb-12`}>
-            {/* Main Project Image */}
-            <div className='w-full md:w-1/2 p-4'>
-              <Image
-                src={project.img}
-                width={450}
-                height={450}
-                alt={project.title}
-                className='rounded-lg object-cover shadow-lg'
-              />
-            </div>
-
             {/* Project Details */}
             <div className='w-full md:w-1/2 p-4 flex flex-col justify-center'>
               <h3 className='text-2xl font-semibold text-gray-200 mb-4'>
@@ -136,6 +125,17 @@ const Portfolio = () => {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Main Project Image */}
+            <div className='w-full md:w-1/2 p-4'>
+              <Image
+                src={project.img}
+                width={450}
+                height={450}
+                alt={project.title}
+                className='rounded-lg object-cover shadow-lg'
+              />
             </div>
           </div>
         </Reveal>

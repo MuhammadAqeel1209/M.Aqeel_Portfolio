@@ -49,13 +49,13 @@ const Skills = () => {
             <a href="https://github.com/MuhammadAqeel1209" className="underline text-blue-400 hover:text-blue-300">here</a>.
           </p>
 
-          {/* Updated layout: Side by side on large screens */}
-          <div className="flex lg:flex-row md:flex-col items-center justify-between gap-6">
+          {/* Updated layout: Side by side on large screens, stacked on medium and small screens */}
+          <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-6">
             {skills.map((skill, index) => (
               <div
                 key={index}
                 className="border border-purple-800 p-6 rounded-xl bg-purple-900/20 shadow-lg 
-                          hover:shadow-purple-700/50 transition-shadow duration-300 flex-1 w-full max-w-[450px]"
+                          hover:shadow-purple-700/50 transition-shadow duration-300"
               >
                 <h3 className="text-3xl font-semibold mb-4 text-center text-white">{skill.category}</h3>
                 <div className="grid grid-cols-2 gap-4">
