@@ -74,6 +74,7 @@ const projects = [
 
 const Portfolio = () => {
   const [modalImage, setModalImage] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   const openModal = (image) => {
     setModalImage(image);
@@ -81,6 +82,10 @@ const Portfolio = () => {
 
   const closeModal = () => {
     setModalImage(null);
+  };
+
+  const toggleShowMore = () => {
+    setShowMore((prev) => !prev);
   };
 
   return (
@@ -108,34 +113,43 @@ const Portfolio = () => {
                 </a>
               </div>
 
-              {/* Project Gallery */}
-              <div className='mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
-                {project.gallery.map((image, imgIndex) => (
-                  <div
-                    key={imgIndex}
-                    className='w-full'
-                    onClick={() => openModal(image)}>
-                    <Image
-                      src={image}
-                      width={550}
-                      height={450}
-                      alt={`Gallery ${imgIndex}`}
-                      className='rounded-md shadow-md object-cover w-full cursor-pointer'
-                    />
-                  </div>
-                ))}
+              {/* Main Project Image */}
+              <div className='w-full mb-4'>
+                <Image
+                  src={project.img}
+                  width={550}
+                  height={450}
+                  alt={project.title}
+                  className='rounded-lg object-cover shadow-lg'
+                />
               </div>
-            </div>
 
-            {/* Main Project Image */}
-            <div className='w-full md:w-1/2 p-4'>
-              <Image
-                src={project.img}
-                width={450}
-                height={450}
-                alt={project.title}
-                className='rounded-lg object-cover shadow-lg'
-              />
+              {/* Show More Button */}
+              <button
+                onClick={toggleShowMore}
+                className='px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300'>
+                {showMore ? 'Show Less' : 'Show More'}
+              </button>
+
+              {/* Project Gallery */}
+              {showMore && (
+                <div className='mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+                  {project.gallery.map((image, imgIndex) => (
+                    <div
+                      key={imgIndex}
+                      className='w-full'
+                      onClick={() => openModal(image)}>
+                      <Image
+                        src={image}
+                        width={550}
+                        height={450}
+                        alt={`Gallery ${imgIndex}`}
+                        className='rounded-md shadow-md object-cover w-full cursor-pointer'
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </Reveal>
