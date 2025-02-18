@@ -87,6 +87,14 @@ const Contact = () => {
                 <p className="text-xs md:text-base"><span>Happy clients</span></p>
               </div>
             </div>
+
+            {/* Add your phone number here */}
+            <div className="mt-6">
+              <p className="text-gray-300 text-lg">
+                📞 <strong>Contact me at:</strong>
+                <a href="tel:+92 3227131980" className="text-purple-500 ml-2">+92 3227131980</a>
+              </p>
+            </div>
           </div>
 
           <form
