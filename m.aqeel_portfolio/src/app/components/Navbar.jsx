@@ -47,12 +47,17 @@ const Navbar = () => {
           </li>
           <li>
             <Link to='skills' smooth={true} offset={50} duration={500}>
-              About
+              Skills
             </Link>
           </li>
           <li>
             <Link to='portfolio' smooth={true} offset={50} duration={500}>
               Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link to='experience' smooth={true} offset={50} duration={500}>
+              Experience
             </Link>
           </li>
           <li>
