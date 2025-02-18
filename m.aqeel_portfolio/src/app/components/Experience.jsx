@@ -2,30 +2,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal"; 
+
 const experiences = [
   {
     company: "Code Soft",
     period: "October 2023 - November 2023",
-    skills: ["Tkinter", "Problem Solving", "Microsoft SQL Server"," Python"],
-    description: "At Code Soft, our Python internship offers hands-on experience in one of today's most versatile programming languages. Dive into Python's fundamentals, work on real projects, and more. With guidance from experienced mentors, you'll emerge ready to tackle real-world coding challenges.",
+    skills: ["Tkinter", "Problem Solving", "Microsoft SQL Server", "Python"],
+    description: "During my internship at Code Soft, I developed desktop applications using Python and Tkinter, creating intuitive user interfaces and solving complex problems. I also gained hands-on experience with Microsoft SQL Server, designing and managing databases to ensure efficient data storage and retrieval. This role enhanced my Python programming skills and deepened my understanding of database management systems.",
   },
   {
     company: "Prodiology InfoTech", 
     period: "May 2024 - June 2024",
-    skills :["Machine Learning", "Scikit-Learn", "Pandas "],
-    description: "At Prodigy Info Tech, I'm currently interning as a Machine Learning Intern. My role involves collaborating with the team to develop and improve machine learning models. This includes tasks like preparing data for analysis, training models, and assessing their performance. I'm enthusiastic about learning and contributing to projects that make a real impact.",
+    skills: ["Machine Learning", "Scikit-Learn", "Pandas"],
+    description: "As a Machine Learning Intern at Prodiology InfoTech, I contributed to the development and optimization of machine learning models using Scikit-Learn and Pandas. I was responsible for data preprocessing, feature engineering, and model evaluation, ensuring high accuracy and performance. This experience allowed me to apply machine learning concepts to real-world datasets and improve my analytical and technical skills.",
   },
   {
     company: "OpusTech",
     period: "July 2024 - September 2024",
-    skills: ["Sql Model" , "Next.js" , "Git" , "Virtual Environment" , "Docker Products", "PostgreSQL" , "Docker" , "Back-End Development" , "FastAPI" , "SQLAlchemy" , "Poetry" , "Python" , "Supabase"],
-    description: "At OpusTech, our Full Stack internship offers hands-on experience in one of today's most versatile programming languages. Dive into Python's fundamentals, work on real projects, and more. With guidance from experienced mentors, you'll emerge ready to tackle real-world coding challenges."
+    skills: [
+      "SQL Model", "Next.js", "Git", "Virtual Environment", "Docker Products", 
+      "PostgreSQL", "Docker", "Back-End Development", "FastAPI", "SQLAlchemy", 
+      "Poetry", "Python", "Supabase"
+    ],
+    description: "At OpusTech, I worked as a Full Stack Developer, focusing on backend systems using FastAPI, SQLAlchemy, and PostgreSQL. I containerized applications using Docker and collaborated with the team to build scalable and efficient solutions. This role helped me gain expertise in backend development, database management, and DevOps practices, while working in a fast-paced, collaborative environment.",
   },
   {
-    company: "Fiver",
+    company: "Fiverr",
     period: "October 2024 - Present",
-    skills :['Python','FastAPI',"Django","Rest API"],
-    description: "Worked as a Python developer, focusing on backend development for large-scale applications. Specialized in Django and FastAPI frameworks to build robust, scalable systems.",
+    skills: ['Python', 'FastAPI', "Django", "Rest API"],
+    description: "As a freelance Python developer on Fiverr, I specialize in backend development using Django and FastAPI. I design and implement RESTful APIs, optimize database performance, and build scalable systems for clients worldwide. This role has allowed me to work on diverse projects, improve my problem-solving skills, and deliver high-quality solutions tailored to client needs.",
   },
 ];
 
