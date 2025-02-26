@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Reveal from "./Reveal";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,11 +30,26 @@ const Contact = () => {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Here you can handle form submission (e.g., send data to backend)
-      alert("Form submitted!");
+      try {
+        const response = await fetch('/api/sendEmail', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        console.log(response);
+        if (response.ok) {
+          toast.success('Message sent successfully!');
+          setFormData({ name: '', email: '', message: '' });
+        } else {
+          toast.error('Failed to send message.');
+        }
+      } catch (error) {
+        console.error('Error sending message:', error);
+        toast.error('An error occurred while sending the message.');
+      }
     }
   };
 
@@ -98,8 +115,6 @@ const Contact = () => {
           </div>
 
           <form
-            action="https://getform.io/f/placeYourEndpointHere"
-            method="POST"
             className="max-w-6xl p-5 md:p-12"
             id="form"
             onSubmit={handleSubmit}
@@ -114,7 +129,7 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
+              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4 text-black"
             />
             {formErrors.name && <p className="text-red-500 text-sm">{formErrors.name}</p>}
 
@@ -125,7 +140,7 @@ const Contact = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
+              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4 text-black"
             />
             {formErrors.email && <p className="text-red-500 text-sm">{formErrors.email}</p>}
 
@@ -137,7 +152,7 @@ const Contact = () => {
               placeholder="Your Message ..."
               value={formData.message}
               onChange={handleChange}
-              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
+              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4 text-black"
             />
             {formErrors.message && <p className="text-red-500 text-sm">{formErrors.message}</p>}
 
@@ -150,6 +165,7 @@ const Contact = () => {
           </form>
         </div>
       </Reveal>
+      <ToastContainer />
     </div>
   );
 };
